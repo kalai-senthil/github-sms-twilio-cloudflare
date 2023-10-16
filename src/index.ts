@@ -19,7 +19,9 @@ export default {
 		try {
 			const formData = request.json();
 			console.log(formData);
-		} catch (error) {}
+		} catch (error) {
+			console.log(error);
+		}
 		return new Response('POST Request');
 	},
 };
