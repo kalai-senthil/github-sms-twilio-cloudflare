@@ -24,7 +24,6 @@ async function sendText(accountSid: string, authToken: string, myNumber: string,
 	encoded.append('To', myNumber);
 	encoded.append('From', twilioNumber);
 	encoded.append('Body', message);
-	// Token
 	let token = btoa(accountSid + ':' + authToken);
 
 	const request = {
