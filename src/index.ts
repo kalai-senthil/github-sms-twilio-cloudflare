@@ -12,6 +12,14 @@ export interface Env {}
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		return new Response('Hello World!');
+		const requestMethod = request.method;
+		if (requestMethod !== 'POST') {
+			return new Response('POST Request only available');
+		}
+		try {
+			const formData = request.json();
+			console.log(formData);
+		} catch (error) {}
+		return new Response('POST Request');
 	},
 };
