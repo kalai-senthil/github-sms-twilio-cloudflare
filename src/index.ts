@@ -21,6 +21,7 @@ import crypto from 'crypto';
 async function sendText(accountSid: string, authToken: string, myNumber: string, twilioNumber: string, message: string) {
 	const endpoint = 'https://api.twilio.com/2010-04-01/Accounts/' + accountSid + '/Messages.json';
 	let encoded = new URLSearchParams();
+	// My Number
 	encoded.append('To', myNumber);
 	encoded.append('From', twilioNumber);
 	encoded.append('Body', message);
